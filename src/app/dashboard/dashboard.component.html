@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="main mat-app-background" [ngClass]="{'dark-theme-mode' : isDarkTheme}">
+    <mat-toolbar color="primary" class="Navbar navbar">
+        <img class="logo" src="assets/images/trello.png" alt="logo"><span class="Title">Trello <span class="Titlecolor">TODO</span> DashBoard</span>
+        <mat-slide-toggle class="switchMode" #darkModeSwitch [(ngModel)]="isDarkTheme">Dark Mode</mat-slide-toggle>
+    </mat-toolbar>
+    <div class="board-boundary" cdkDropListGroup>
+        <mat-card class="board-box" color="primary" cdkDragBoundary=".board-boundary" *ngFor="let list of getLists" cdkDrag><input class="listInput" #input1 value="{{ list.name }}">
+            <div class="listAction">
+                <button (click)="EditList(list.id, input1.value, input1)" class="card-listEdit" id="bg-list"><img class="edit-icon" src="assets/images/edit-solid.svg" alt="edit-icon"></button>
+                <button (click)="DeleteList(list.id)" class="card-listDelete" id="bg-list"><img class="trash-can-icon" src="assets/images/trash-can-solid.svg" alt="trash-can-icon"></button>
+             </div>
+            <div *ngFor="let item of getCards" cdkDropList [cdkDropListData]="getCards" (cdkDropListDropped)="drop($event)" > <!-- list.data -->
+                <button class="Card" cdkDrag *ngIf="item.idList === list.id" ><input class="cardInput" type="text" #input2 value="{{item.name}}">
+                    <button class="card-listDelete" (click)="DeleteCard(item.id)">
+                        <img class="trash-can-icon" src="assets/images/trash-can-solid.svg" alt="trash-can-icon">
+                    </button>
+                    <button class="card-listEdit" (click)="EditCard(item.id, input2.value)"><img class="edit-icon" src="assets/images/edit-solid.svg" alt="edit-icon"></button>
+                </button>
+            </div>
+            <mat-accordion class="popUP">
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="addCardTitle">
+                      Dodaj Kartę<img class="down-long-icon" src="assets/images/down-long-solid.svg" alt="down-long-icon">
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <input class="inputCardAdd" type="text" placeholder="Podaj nazwe karty" [attr.id]="list.id" #input3>  
+                  <div class="changeOpacity"><button class="cardAdd" (click)="AddCard(list.id, input3.value)">Dodaj Kartę<img class="plus-icon" src="assets/images/plus-solid.svg" alt="plus-icon"></button></div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-card> 
+        <mat-card class="boardAdd-box">
+            <mat-accordion class="popUP">
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="addCardTitle">
+                      Dodaj Listę<img class="down-long-icon" src="assets/images/down-long-solid.svg" alt="down-long-icon">
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                    <div *ngFor="let item of slicedData(getLists)">
+                        <input class="inputCardAdd" type="text" placeholder="Podaj nazwe listy" [attr.id]="getLists.id" #input value="">  
+                        <button class="ListAdd changeOpacity" (click)="AddList(item.idBoard, input.value)">Dodaj Listę<img class="plus-icon" src="assets/images/plus-solid.svg" alt="plus-icon"></button>
+                    </div>        
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-card> 
+    </div>
+    <mat-toolbar color="primary" class="footer navbar">
+        <p class="footerText">Paweł - Woszczyna</p>
+            <a href="#"><fa-icon class="footerImages" [icon]="faTwitter"></fa-icon></a>
+            <a href="#"><fa-icon class="footerImages" [icon]="faFacebook"></fa-icon></a>
+            <a href="#"><fa-icon class="footerImages" [icon]="faInstagram"></fa-icon></a>
+    </mat-toolbar>
+</div>

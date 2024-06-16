@@ -1,0 +1,374 @@
+.main{
+    height: max-content;
+    display: block;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+
+.Navbar{
+    display: flex;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+    color: black;
+    height: 20%;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.logo{
+    width: 30px;
+    height: 30px;
+}
+
+.switchMode{
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    font-size: x-large;
+    margin-left: 5%;
+}
+
+/* board */
+
+.board-box{
+    display: flex;
+    height: max-content;
+    width: max-content;
+    min-width: 20%;
+    margin: 20px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: move;
+    background-color: beige;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.board-box:hover{
+    z-index: 1;
+}
+
+.board-boundary {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: auto;
+    flex: 0 0 auto;
+    height: 75vh;
+    width: 100%;
+}
+
+.boardAdd-box{
+    display: flex;
+    background-color: beige;
+    height: max-content;
+    width: max-content;
+    min-width: 20%;
+    margin: 20px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* lists */
+
+.ListAdd{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    color: rgb(26, 24, 24);
+    background-color: beige;
+    padding-left: 5px;
+    width: 100%;
+    border: none;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.inputListAdd{
+    display: flex;
+    margin-top: 20px;
+    width: 60%;
+    margin-left: 10%;
+    font-size: 0.7rem;
+    background-color: beige;
+    padding: 8px;
+    border: none;
+    margin-bottom: 10px;
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+}
+
+.ListAdd{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    color: rgb(26, 24, 24);
+    background-color: beige;
+    padding-left: 5px;
+    width: 100%;
+    border: none;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+
+.inputListAdd:hover{
+    outline: 2px;
+    outline-style: solid;
+    box-shadow:0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.listInput{
+    border: none;
+    background-color: beige;
+    margin-bottom: 5px;
+    text-decoration: underline;
+    font-size: larger;
+    overflow:scroll;
+    width: 10%;
+    min-width: 40%;
+}
+
+.listInput:focus{
+    outline: none;
+}
+
+
+/* cards */
+
+.Card{
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    border-bottom-right-radius:10px;
+    border-bottom-left-radius:10px;
+    margin-top: 20px;
+    padding: 10px;
+    font-weight: 400;
+    color: rgb(26, 24, 24);
+    background-color: white;
+    padding-left: 5px;
+    width: 100%;
+    border: none;
+    padding-right: 5px;
+    cursor: grab;
+}
+
+.card:hover{
+    box-shadow:0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    outline: 2px;
+    outline-style: solid;
+}
+
+.cardAdd{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    color: rgb(26, 24, 24);
+    background-color: beige;
+    padding-left: 5px;
+    width: 100%;
+    border: none;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.inputCardAdd{
+    display: flex;
+    margin-top: 20px;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    font-size: 0.7rem;
+    background-color: beige;
+    padding: 8px;
+    border: none;
+    margin-bottom: 10px;
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+}
+
+.inputCardAdd:hover{
+    outline: 2px;
+    outline-style: solid;
+    box-shadow:0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cardInput{
+    border-style: none;  
+    width: 100%;
+}
+
+.cardInput:focus{
+    outline: none;
+}
+
+.listAction{
+    display: flex;
+    height: 20px;
+    width: 40px;
+}
+
+#bg-list{
+    background-color: beige;
+}
+
+.card-listDelete{
+    display: flex;
+    float: right;
+    height: 20px;
+    width: 20px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.card-listEdit{
+    display: flex;
+    float: right;
+    height: 20px;
+    width: 20px;
+    border: none;
+    background-color: white;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.addCardTitle{
+    display: flex;
+    justify-content: center;
+}
+
+.popUP{
+    margin-top: 10px;
+    box-shadow: 0px;
+    border: none;
+}
+
+
+
+/* icons */
+
+.trash-can-icon{
+    height: 20px;
+    width: 20px;
+}
+
+.trash-can-icon:hover{
+    opacity: 0.5;
+}
+
+.edit-icon{
+    height: 20px;
+    width: 20px;
+}
+
+.edit-icon:hover{
+    opacity: 0.5;
+}
+
+.down-long-icon{
+    width: 15px;
+    height: 20px;
+    display: flex;
+    padding-left: 5px;
+}
+
+.plus-icon{
+    margin-bottom: -5px;
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.changeOpacity:hover{
+    opacity: 0.9;
+}
+
+/* footer */
+
+.footer{
+    display: flex;
+    position: relative; 
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    width: 100%;
+    color: black;
+    height: 20%;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footerText{
+    display: flex;
+    margin-left: 10%;
+    word-spacing: 2px;
+}
+
+.footerImages{
+    width: 30px;
+    height: 30px;
+}
+
+@media only screen and (max-width: 628px) {
+    .main{
+        height: auto;
+        overflow-y: visible;
+        overflow-x: visible;
+    }
+
+    .switchMode{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footerText {
+        word-spacing: 3px;
+        font-size: medium;
+    }
+    
+    .board-boundary{
+        height: max-content;
+        flex-direction: column;
+    }
+}
+  
+@media only screen and (max-width: 940px) {
+    .board-box{
+        min-width: 30%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .Navbar{
+        font-size: large;
+    }
+}
