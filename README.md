@@ -1,4 +1,4 @@
-For project to work you have to create 2 file. First one named "environment.json.ts" in folder "environment". Its structure should look like this:
+For project to work you have to create 2 files. First one named "environment.json.ts" in folder "environment". Its structure should look like this:
 
 //
 
