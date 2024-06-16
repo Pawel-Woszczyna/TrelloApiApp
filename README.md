@@ -1,27 +1,23 @@
-# TrelloDashboard
+For project to work you have to create 2 file. First one named "environment.json.ts" in folder "environment". Its structure should look like this:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+//
 
-## Development server
+export const CONFIG = { 
+    "API_KEY": ""
+}
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+//
 
-## Code scaffolding
+And the second one which structure should look like this:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+//
 
-## Build
+export const getToken = { 
+    "API_TOKEN": ""
+}
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+//
 
-## Running unit tests
+In the quotes you should put your own API_KEY and API_TOKEN that you can generate right here: https://trello.com/power-ups/admin.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+After you open the website you need need to click New and create your own power-up. What you have to do next is click on "API key" tab where you can find api key, to generate your own token you have to click on blue highlighted link called "token" to the right of api key. You need to authorize your app by clicking allow and thats how you get your API token. 
